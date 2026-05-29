@@ -1,0 +1,31 @@
+# Поднимает только PostgreSQL — кэш (Caffeine) встроен в приложение
+# и отдельного сервера не требует. Нужен тем, у кого нет локального PostgreSQL.
+#
+# Креды контейнера берутся из переменных окружения; значения по умолчанию совпадают с
+# дефолтами приложения. DB_USERNAME / DB_PASSWORD — те же переменные, что читает и само
+# приложение, поэтому, задав их один раз, получаем согласованные контейнер и приложение.
+# Реальный пароль держите в secret.properties — в git он не коммитится.
+#
+# Примеры:
+#   docker compose up -d postgres
+#   DB_USERNAME=[логин] DB_PASSWORD=[пароль] POSTGRES_DB=[название db] docker compose up -d postgres
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: bank-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bank}
+      POSTGRES_USER: ${DB_USERNAME:-userbank}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-userbank}
+    ports:
+      - "5432:5432"
+    volumes:
+      - bank-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USERNAME:-userbank} -d ${POSTGRES_DB:-bank}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  bank-pgdata:
