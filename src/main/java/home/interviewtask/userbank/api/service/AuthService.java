@@ -3,7 +3,7 @@ package home.interviewtask.userbank.api.service;
 import home.interviewtask.userbank.api.dto.LoginRequest;
 import home.interviewtask.userbank.api.dto.TokenResponse;
 import home.interviewtask.userbank.postgresql.entity.User;
-import home.interviewtask.userbank.exception.BusinessException;
+import home.interviewtask.userbank.api.exception.BusinessException;
 import home.interviewtask.userbank.postgresql.repository.UserRepository;
 import home.interviewtask.userbank.api.security.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;

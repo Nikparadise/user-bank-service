@@ -1,4 +1,4 @@
-package home.interviewtask.userbank.exception;
+package home.interviewtask.userbank.api.exception;
 
 import home.interviewtask.userbank.api.dto.ErrorResponse;
 import lombok.extern.slf4j.Slf4j;

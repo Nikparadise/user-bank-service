@@ -1,4 +1,4 @@
-package home.interviewtask.userbank.exception;
+package home.interviewtask.userbank.api.exception;
 
 public class NotFoundException extends RuntimeException {
 

@@ -1,4 +1,4 @@
-package home.interviewtask.userbank.exception;
+package home.interviewtask.userbank.api.exception;
 
 /**
  * Бросается при нарушении бизнес-правил (например, недостаточно средств, удаление последнего
