@@ -1,0 +1,26 @@
+# Сборка Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE / инструменты
+.idea/
+.claude/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.project
+.classpath
+
+# Секреты (значение JWT-ключа), но шаблон .example коммитим
+secret.properties
+!secret.properties.example
+
+# Логи и временные файлы
+*.log
+*.tmp
+
+# ОС
+.DS_Store
+Thumbs.db
