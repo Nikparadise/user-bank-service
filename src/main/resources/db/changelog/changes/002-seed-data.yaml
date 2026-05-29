@@ -1,0 +1,47 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-seed-users
+      author: userbank
+      comment: >-
+        Демо-пользователи (создаются миграцией, как требует задание). Пароли — это BCrypt-хэши:
+        пользователь 1 -> 'password1', пользователь 2 -> 'password2', пользователь 3 -> 'password3'.
+        Телефоны нормализованы до цифр (колонка VARCHAR(13), формат вида 79207865432).
+      changes:
+        - sql:
+            splitStatements: true
+            stripComments: false
+            sql: |
+              INSERT INTO users (id, name, date_of_birth, password) VALUES
+                (1, 'Мильков Никита Дмитриевич',     NULL, '$2a$10$hEmQtMqhRcNQG8mqrQyD/uVaVnqg3xbzeYlfzpnQ3U6f/987EhoGy'),
+                (2, 'Милькова Александра Федоровна',  NULL, '$2a$10$e55nvYiHRczHCXkyRjcGRuzNtMVahWh.VqKk4uFpAT/4er/C0zu9u'),
+                (3, 'Americano Bill Gates',           NULL, '$2a$10$JYRBAWSMbTsEjjQtXT1bZOJT9F5JgfwR8CRJrdKypE32U1qLnKoJa');
+
+              INSERT INTO account (id, user_id, balance, initial_balance) VALUES
+                (1, 1,  100.00,  100.00),
+                (2, 2,  250.50,  250.50),
+                (3, 3, 1000.00, 1000.00);
+
+              INSERT INTO email_data (id, user_id, email) VALUES
+                (1, 1, 'nikparadise@mail.ru'),
+                (2, 2, 'sadovskaf@mail.ru'),
+                (3, 3, 'test@icloud.com'),
+                (4, 3, 'secondemail@gmail.com');
+
+              INSERT INTO phone_data (id, user_id, phone) VALUES
+                (1, 1, '89201306265'),
+                (2, 2, '79992251484'),
+                (3, 3, '81234654500'),
+                (4, 1, '89999999999');
+
+              -- сдвигаем identity-последовательности за вставленные выше явные id
+              SELECT setval(pg_get_serial_sequence('users',      'id'), (SELECT MAX(id) FROM users));
+              SELECT setval(pg_get_serial_sequence('account',    'id'), (SELECT MAX(id) FROM account));
+              SELECT setval(pg_get_serial_sequence('email_data', 'id'), (SELECT MAX(id) FROM email_data));
+              SELECT setval(pg_get_serial_sequence('phone_data', 'id'), (SELECT MAX(id) FROM phone_data));
+      rollback:
+        - sql:
+            sql: |
+              DELETE FROM phone_data WHERE id IN (1, 2, 3, 4);
+              DELETE FROM email_data WHERE id IN (1, 2, 3, 4);
+              DELETE FROM account WHERE id IN (1, 2, 3);
+              DELETE FROM users WHERE id IN (1, 2, 3);
