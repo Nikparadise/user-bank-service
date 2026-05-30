@@ -1,0 +1,4 @@
+# Git hooks and shell scripts must keep LF endings, otherwise the shebang
+# breaks (CR in "#!/bin/sh\r") and the hook fails to run on Unix shells.
+.githooks/** text eol=lf
+*.sh text eol=lf

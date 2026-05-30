@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# Copyright (C) 2026 Milkov Nikita. All rights reserved.
+#
+# Pre-commit hook: auto-updates the "Last edited" timestamp in the copyright
+# header of every staged .java file to the current date+time (DD.MM.YYYY HH:MM)
+# and re-stages it. No-op for files without the header.
+#
+# Enabled via:  git config core.hooksPath .githooks
+#
+
+now=$(date +"%d.%m.%Y %H:%M")
+
+# Staged Java files: Added / Copied / Modified
+files=$(git diff --cached --name-only --diff-filter=ACM -- '*.java')
+[ -z "$files" ] && exit 0
+
+updated=0
+for f in $files; do
+  [ -f "$f" ] || continue
+  # only touch files that carry our copyright header
+  grep -q "Last edited:" "$f" || continue
+
+  # replace the date (with optional existing HH:MM) by the current date+time
+  perl -i -pe "s/(\*\s*Last edited:\s*)\d{2}\.\d{2}\.\d{4}( \d{2}:\d{2})?/\${1}$now/" "$f"
+  git add "$f"
+  updated=$((updated + 1))
+done
+
+[ "$updated" -gt 0 ] && echo "pre-commit: stamped 'Last edited' = $now in $updated .java file(s)"
+exit 0

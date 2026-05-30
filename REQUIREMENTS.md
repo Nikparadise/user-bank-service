@@ -64,6 +64,7 @@
 - [x] **Два формата миграций — SQL и YAML** (наглядность и вариативность) — оркестрация [db.changelog-master.yaml](src/main/resources/db/changelog/db.changelog-master.yaml) · схема в SQL [001-init-schema.sql](src/main/resources/db/changelog/changes/001-init-schema.sql) · сид-данные в YAML [002-seed-data.yaml](src/main/resources/db/changelog/changes/002-seed-data.yaml)
 - [x] **Документация и чек-лист** — описание проекта [README.md](README.md) · трассировка требований ТЗ → код [REQUIREMENTS.md](REQUIREMENTS.md)
 - [x] **Шаблоны запросов/ответов для всех ручек API** — на каждую ручку пример запроса и ответа (успех, 401, ошибки валидации/бизнес-логики); разложены по папкам [request/](src/main/resources/template/request) и [response/](src/main/resources/template/response), описание [template/README.md](src/main/resources/template/README.md)
+- [x] **Копирайт и авто-обновление даты** — копирайт-шапка во всех `.java` + файл [COPYRIGHT](COPYRIGHT); pre-commit хук [.githooks/pre-commit](.githooks/pre-commit) автоматически проставляет дату и время последней редакции (`Last edited`) в изменённых файлах
 
 ## 6. Тестирование
 
