@@ -1,4 +1,4 @@
-package home.interviewtask.userbank.service;
+package home.interviewtask.userbank.processor;
 
 import home.interviewtask.userbank.config.BalanceProperties;
 import home.interviewtask.userbank.postgresql.entity.Account;
@@ -16,16 +16,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class BalanceAccrualServiceTest {
+class BalanceAccrualProcessorTest {
 
     @Mock
     private AccountRepository accountRepository;
 
-    private BalanceAccrualService service;
+    private BalanceAccrualProcessor service;
 
     @BeforeEach
     void setUp() {
-        service = new BalanceAccrualService(accountRepository, new BalanceProperties());
+        service = new BalanceAccrualProcessor(accountRepository, new BalanceProperties());
     }
 
     private Account account(String balance, String initial) {

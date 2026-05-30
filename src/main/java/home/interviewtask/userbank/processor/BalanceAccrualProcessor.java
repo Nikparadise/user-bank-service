@@ -1,4 +1,4 @@
-package home.interviewtask.userbank.service;
+package home.interviewtask.userbank.processor;
 
 import home.interviewtask.userbank.config.BalanceProperties;
 import home.interviewtask.userbank.postgresql.entity.Account;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class BalanceAccrualService {
+public class BalanceAccrualProcessor {
 
     private final AccountRepository accountRepository;
     private final BalanceProperties properties;

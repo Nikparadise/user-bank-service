@@ -1,6 +1,5 @@
-package home.interviewtask.userbank.service;
+package home.interviewtask.userbank.api.service;
 
-import home.interviewtask.userbank.api.service.TransferService;
 import home.interviewtask.userbank.postgresql.entity.Account;
 import home.interviewtask.userbank.api.exception.BusinessException;
 import home.interviewtask.userbank.api.exception.NotFoundException;

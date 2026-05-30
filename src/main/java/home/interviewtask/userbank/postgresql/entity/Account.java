@@ -41,7 +41,7 @@ public class Account {
      * Первоначальный депозит, заданный при создании пользователя.
      * Периодическое начисление процентов не может поднять баланс выше
      * initialBalance × maxMultiplier (по умолчанию 2.07, т.е. 207% от депозита) —
-     * см. {@link home.interviewtask.userbank.config.BalanceProperties} и BalanceAccrualService.
+     * см. {@link home.interviewtask.userbank.config.BalanceProperties} и BalanceAccrualProcessor.
      */
     @Column(name = "initial_balance", nullable = false, precision = 19, scale = 2)
     private BigDecimal initialBalance;

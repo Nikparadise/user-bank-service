@@ -1,6 +1,6 @@
 package home.interviewtask.userbank.scheduler;
 
-import home.interviewtask.userbank.service.BalanceAccrualService;
+import home.interviewtask.userbank.processor.BalanceAccrualProcessor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -13,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BalanceAccrualScheduler {
 
-    private final BalanceAccrualService accrualService;
+    private final BalanceAccrualProcessor accrualService;
 
     /**
      * Запускается каждые {@code app.balance.scheduler-fixed-rate-ms} (по умолчанию 30с).
