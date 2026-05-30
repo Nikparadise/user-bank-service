@@ -79,5 +79,6 @@ app:
 logging:
   level:
     home.interviewtask.userbank: DEBUG
+    SqlLoggingAspect: DEBUG
     org.springframework.cache: INFO
     org.hibernate.SQL: DEBUG

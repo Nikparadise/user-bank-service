@@ -17,8 +17,8 @@ public class OpenApiConfig {
     public OpenAPI userBankOpenApi() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("User Bank Service API")
-                        .description("Users, accounts, contacts, search and money transfer")
+                        .title("API банковского сервиса пользователей")
+                        .description("Пользователи, счета, контакты, поиск и денежные переводы")
                         .version("1.0.0"))
                 .addSecurityItem(new SecurityRequirement().addList(BEARER))
                 .components(new Components().addSecuritySchemes(BEARER,
