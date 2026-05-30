@@ -1,0 +1,37 @@
+{
+  "201 Created — email добавлен": {
+    "status": 201,
+    "body": {
+      "id": 10
+    }
+  },
+
+  "400 Bad Request — ошибка валидации (некорректный email)": {
+    "status": 400,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 400,
+      "error": "Bad Request",
+      "message": "Validation failed",
+      "fieldErrors": {
+        "email": "email должен быть корректным адресом"
+      }
+    }
+  },
+
+  "409 Conflict — email уже занят": {
+    "status": 409,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 409,
+      "error": "Conflict",
+      "message": "Email already in use: alice.new@example.com"
+    }
+  },
+
+  "401 Unauthorized — нет или невалидный токен": {
+    "status": 401,
+    "body": null,
+    "_note": "Защищённая ручка. Spring Security возвращает пустое тело со статусом 401."
+  }
+}

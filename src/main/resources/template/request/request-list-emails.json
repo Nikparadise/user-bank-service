@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/me/emails",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Список email авторизованного пользователя. Тела запроса нет.",
+  "body": null
+}

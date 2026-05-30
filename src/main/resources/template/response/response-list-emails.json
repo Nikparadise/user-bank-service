@@ -1,0 +1,15 @@
+{
+  "200 OK — список email": {
+    "status": 200,
+    "body": [
+      "alice@example.com",
+      "alice.work@example.com"
+    ]
+  },
+
+  "401 Unauthorized — нет или невалидный токен": {
+    "status": 401,
+    "body": null,
+    "_note": "Защищённая ручка. Spring Security возвращает пустое тело со статусом 401."
+  }
+}

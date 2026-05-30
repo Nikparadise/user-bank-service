@@ -1,0 +1,12 @@
+{
+  "method": "DELETE",
+  "path": "/api/me/phones/{phoneId}",
+  "pathParams": {
+    "phoneId": 20
+  },
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Удаляет один из своих номеров. Нельзя удалить последний — минимум один телефон должен остаться. Тела запроса нет.",
+  "body": null
+}

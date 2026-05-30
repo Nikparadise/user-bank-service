@@ -1,0 +1,41 @@
+{
+  "200 OK — страница результатов поиска": {
+    "status": 200,
+    "body": {
+      "content": [
+        {
+          "id": 1,
+          "name": "Alice",
+          "dateOfBirth": "1990-01-01",
+          "emails": [
+            "alice@example.com"
+          ],
+          "phones": [
+            "79207865432"
+          ]
+        }
+      ],
+      "page": 0,
+      "size": 20,
+      "totalElements": 1,
+      "totalPages": 1
+    }
+  },
+
+  "200 OK — ничего не найдено (пустая страница)": {
+    "status": 200,
+    "body": {
+      "content": [],
+      "page": 0,
+      "size": 20,
+      "totalElements": 0,
+      "totalPages": 0
+    }
+  },
+
+  "401 Unauthorized — нет или невалидный токен": {
+    "status": 401,
+    "body": null,
+    "_note": "Защищённая ручка. Spring Security возвращает пустое тело со статусом 401."
+  }
+}

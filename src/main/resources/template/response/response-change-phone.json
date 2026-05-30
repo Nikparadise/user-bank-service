@@ -1,0 +1,45 @@
+{
+  "204 No Content — номер изменён": {
+    "status": 204,
+    "body": null
+  },
+
+  "400 Bad Request — ошибка валидации (неверный формат номера)": {
+    "status": 400,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 400,
+      "error": "Bad Request",
+      "message": "Validation failed",
+      "fieldErrors": {
+        "phone": "телефон должен состоять из 11-13 цифр, например 79207865432"
+      }
+    }
+  },
+
+  "404 Not Found — номер не найден или не принадлежит пользователю": {
+    "status": 404,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 404,
+      "error": "Not Found",
+      "message": "Phone not found: 20"
+    }
+  },
+
+  "409 Conflict — новый номер уже занят": {
+    "status": 409,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 409,
+      "error": "Conflict",
+      "message": "Phone already in use: 79009998877"
+    }
+  },
+
+  "401 Unauthorized — нет или невалидный токен": {
+    "status": 401,
+    "body": null,
+    "_note": "Защищённая ручка. Spring Security возвращает пустое тело со статусом 401."
+  }
+}

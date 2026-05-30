@@ -1,0 +1,12 @@
+{
+  "method": "GET",
+  "path": "/api/users/{id}",
+  "pathParams": {
+    "id": 1
+  },
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Профиль пользователя по id. Баланс не входит в профиль (он меняется каждые 30с) — берётся через GET /api/accounts/me. Тела запроса нет.",
+  "body": null
+}

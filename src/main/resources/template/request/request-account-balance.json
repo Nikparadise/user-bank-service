@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/accounts/me",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Возвращает всегда актуальный баланс авторизованного пользователя (USER_ID берётся из токена). Тела запроса нет.",
+  "body": null
+}

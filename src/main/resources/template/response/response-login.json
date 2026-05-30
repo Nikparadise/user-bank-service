@@ -1,0 +1,43 @@
+{
+  "200 OK — успешная аутентификация": {
+    "status": 200,
+    "body": {
+      "accessToken": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiVVNFUl9JRCI6MSwiaWF0IjoxNzA4MDAwMDAwLCJleHAiOjE3MDgwMDM2MDB9.PLACEHOLDER_SIGNATURE",
+      "tokenType": "Bearer",
+      "expiresInMs": 3600000
+    }
+  },
+
+  "400 Bad Request — ошибка валидации (пустой пароль)": {
+    "status": 400,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 400,
+      "error": "Bad Request",
+      "message": "Validation failed",
+      "fieldErrors": {
+        "password": "пароль не должен быть пустым"
+      }
+    }
+  },
+
+  "400 Bad Request — передано и email, и phone (или ни одного)": {
+    "status": 400,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 400,
+      "error": "Bad Request",
+      "message": "Provide exactly one of: email or phone"
+    }
+  },
+
+  "401 Unauthorized — неверные учётные данные": {
+    "status": 401,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 401,
+      "error": "Unauthorized",
+      "message": "Invalid credentials"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/me/phones",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Список номеров телефонов авторизованного пользователя. Тела запроса нет.",
+  "body": null
+}

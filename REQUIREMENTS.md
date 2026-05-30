@@ -63,6 +63,7 @@
 - [x] **AOP-логирование запросов к репозиториям** — аспект перед каждым вызовом пишет аргументы и сам запрос (`@Query` / производный) — [SqlLoggingAspect #L23](src/main/java/home/interviewtask/userbank/postgresql/log/SqlLoggingAspect.java#L23) · подключение AOP [pom.xml#L45](pom.xml#L45)
 - [x] **Два формата миграций — SQL и YAML** (наглядность и вариативность) — оркестрация [db.changelog-master.yaml](src/main/resources/db/changelog/db.changelog-master.yaml) · схема в SQL [001-init-schema.sql](src/main/resources/db/changelog/changes/001-init-schema.sql) · сид-данные в YAML [002-seed-data.yaml](src/main/resources/db/changelog/changes/002-seed-data.yaml)
 - [x] **Документация и чек-лист** — описание проекта [README.md](README.md) · трассировка требований ТЗ → код [REQUIREMENTS.md](REQUIREMENTS.md)
+- [x] **Шаблоны запросов/ответов для всех ручек API** — на каждую ручку пример запроса и ответа (успех, 401, ошибки валидации/бизнес-логики); разложены по папкам [request/](src/main/resources/template/request) и [response/](src/main/resources/template/response), описание [template/README.md](src/main/resources/template/README.md)
 
 ## 6. Тестирование
 

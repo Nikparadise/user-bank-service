@@ -1,0 +1,16 @@
+{
+  "200 OK — текущий баланс": {
+    "status": 200,
+    "body": {
+      "userId": 1,
+      "balance": 110.00,
+      "initialBalance": 100.00
+    }
+  },
+
+  "401 Unauthorized — нет или невалидный токен": {
+    "status": 401,
+    "body": null,
+    "_note": "Защищённая ручка. Spring Security (HttpStatusEntryPoint) возвращает пустое тело со статусом 401."
+  }
+}

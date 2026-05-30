@@ -1,0 +1,32 @@
+{
+  "204 No Content — email удалён": {
+    "status": 204,
+    "body": null
+  },
+
+  "400 Bad Request — попытка удалить последний email": {
+    "status": 400,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 400,
+      "error": "Bad Request",
+      "message": "A user must keep at least one email"
+    }
+  },
+
+  "404 Not Found — email не найден или не принадлежит пользователю": {
+    "status": 404,
+    "body": {
+      "timestamp": "2026-05-30T12:00:00Z",
+      "status": 404,
+      "error": "Not Found",
+      "message": "Email not found: 10"
+    }
+  },
+
+  "401 Unauthorized — нет или невалидный токен": {
+    "status": 401,
+    "body": null,
+    "_note": "Защищённая ручка. Spring Security возвращает пустое тело со статусом 401."
+  }
+}

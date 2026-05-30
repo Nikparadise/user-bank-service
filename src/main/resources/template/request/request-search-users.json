@@ -1,0 +1,24 @@
+{
+  "method": "GET",
+  "path": "/api/users",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Поиск пользователей. Все фильтры опциональны — можно передать любую комбинацию или ни одного. Параметры передаются в query string, тела запроса нет.",
+  "queryParams": {
+    "name": "Al",
+    "email": "alice@example.com",
+    "phone": "79207865432",
+    "dateOfBirth": "01.01.1980",
+    "page": 0,
+    "size": 20,
+    "sort": "id,asc"
+  },
+  "_filters": {
+    "name": "LIKE 'name%' — начинается с переданного текста",
+    "email": "точное совпадение (100%)",
+    "phone": "точное совпадение (100%)",
+    "dateOfBirth": "формат dd.MM.yyyy; вернёт записи с date_of_birth СТРОГО больше указанной"
+  },
+  "body": null
+}

@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "path": "/api/me/phones",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>",
+    "Content-Type": "application/json"
+  },
+  "_note": "Добавляет номер телефона текущему пользователю. Формат: 11-13 цифр (например 79207865432), не занят другим пользователем.",
+  "body": {
+    "phone": "79001234567"
+  }
+}

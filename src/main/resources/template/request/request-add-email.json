@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "path": "/api/me/emails",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>",
+    "Content-Type": "application/json"
+  },
+  "_note": "Добавляет email текущему пользователю. Должен быть корректным, не длиннее 200 символов и не занят другим пользователем.",
+  "body": {
+    "email": "alice.new@example.com"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "method": "DELETE",
+  "path": "/api/me/emails/{emailId}",
+  "pathParams": {
+    "emailId": 10
+  },
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>"
+  },
+  "_note": "Удаляет один из своих email. Нельзя удалить последний — минимум один email должен остаться. Тела запроса нет.",
+  "body": null
+}

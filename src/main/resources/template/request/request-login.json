@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "path": "/api/auth/login",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "_note": "Передать ровно одно из email / phone + password. Публичная ручка, токен не нужен.",
+  "body": {
+    "email": "alice@example.com",
+    "password": "alicepass1"
+  },
+  "_alt_body_by_phone": {
+    "phone": "79207865432",
+    "password": "alicepass1"
+  }
+}

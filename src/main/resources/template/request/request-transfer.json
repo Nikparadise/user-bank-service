@@ -1,0 +1,13 @@
+{
+  "method": "POST",
+  "path": "/api/accounts/transfer",
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>",
+    "Content-Type": "application/json"
+  },
+  "_note": "Отправитель (from) берётся из токена. В теле — получатель (toUserId) и сумма (value, до 2 знаков после запятой, > 0).",
+  "body": {
+    "toUserId": 2,
+    "value": 25.50
+  }
+}

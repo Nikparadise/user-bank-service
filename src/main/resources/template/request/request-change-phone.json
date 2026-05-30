@@ -1,0 +1,15 @@
+{
+  "method": "PUT",
+  "path": "/api/me/phones/{phoneId}",
+  "pathParams": {
+    "phoneId": 20
+  },
+  "headers": {
+    "Authorization": "Bearer <accessToken из /api/auth/login>",
+    "Content-Type": "application/json"
+  },
+  "_note": "Меняет один из своих номеров. phoneId должен принадлежать текущему пользователю, новое значение — не занято другим.",
+  "body": {
+    "phone": "79009998877"
+  }
+}
